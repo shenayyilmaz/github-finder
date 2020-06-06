@@ -11,8 +11,8 @@ const Users = ({ users, loading }) => {
     return (
       <div style={usersStyles}>
         {users.map((user) => (
-          <div>
-            <UserItem key={user.id} user={user} />
+          <div key={user.id}>
+            <UserItem user={user} />
           </div>
         ))}
       </div>
@@ -20,7 +20,7 @@ const Users = ({ users, loading }) => {
   }
 };
 
-Users.PropTypes = {
+Users.propTypes = {
   users: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
 };
